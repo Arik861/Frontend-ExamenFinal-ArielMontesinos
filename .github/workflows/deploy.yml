@@ -1,9 +1,10 @@
-name: Deploy Frontend
+name: Deploy Frontend to GitHub Pages
 
 on:
   push:
     branches:
       - dev
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
@@ -26,38 +27,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
       - name: Instalar dependencias
         run: npm install
 
       - name: Compilar proyecto
         run: npm run build
+        env:
+          VITE_API_URL: https://exmanefinal-arielmontesinos.onrender.com/api
 
-      - name: Configurar GitHub Pages
+      - name: Configurar Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
-      - name: Subir archivos
+      - name: Subir dist
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: dist
 
-  deploy:
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    permissions:
-      pages: write
-      id-token: write
-
-    steps:
-      - name: Publicar en GitHub Pages
-        id: deployment
+      - name: Publicar Pages
         uses: actions/deploy-pages@v4
