@@ -1,0 +1,117 @@
+.home-page {
+  padding: 24px;
+}
+
+.home-hero {
+  min-height: 300px;
+  border-radius: 24px;
+  padding: 36px;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  background:
+    linear-gradient(120deg, rgba(7, 29, 45, 0.92), rgba(30, 127, 168, 0.72)),
+    url("../../assets/images/fundador.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 18px 38px rgba(7, 29, 45, 0.18);
+}
+
+.hero-label {
+  display: inline-block;
+  background: rgba(217, 164, 65, 0.22);
+  border: 1px solid rgba(247, 217, 128, 0.55);
+  color: var(--dorado-claro);
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.home-hero h1 {
+  max-width: 720px;
+  font-size: 40px;
+  line-height: 1.08;
+  margin-bottom: 12px;
+}
+
+.home-hero p {
+  max-width: 720px;
+  color: #e7f2f6;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 22px 0;
+}
+
+.summary-card {
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  padding: 21px;
+  box-shadow: 0 12px 26px rgba(15, 47, 71, 0.08);
+}
+
+.summary-card svg {
+  font-size: 26px;
+  color: var(--celeste);
+}
+
+.summary-card strong {
+  display: block;
+  font-size: 35px;
+  color: var(--azul);
+  margin: 8px 0 2px;
+}
+
+.summary-card span {
+  color: var(--gris);
+  font-weight: 700;
+}
+
+.connection-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: #fff8e7;
+  border: 1px solid #f0d79a;
+  border-radius: 20px;
+  padding: 20px;
+  color: var(--azul);
+}
+
+.connection-card svg {
+  font-size: 30px;
+  color: var(--dorado);
+}
+
+.connection-card p {
+  margin-top: 4px;
+  word-break: break-all;
+  color: var(--gris);
+}
+
+@media (max-width: 950px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-hero h1 {
+    font-size: 31px;
+  }
+}
+
+@media (max-width: 560px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    padding: 24px;
+  }
+}

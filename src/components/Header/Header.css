@@ -1,0 +1,82 @@
+.top-header {
+  min-height: 178px;
+  padding: 26px 34px;
+  background:
+    linear-gradient(120deg, rgba(7, 29, 45, 0.94), rgba(30, 127, 168, 0.78)),
+    url("../../assets/images/banner.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 5px solid var(--dorado);
+}
+
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--blanco);
+  background: rgba(0, 0, 0, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 22px;
+  padding: 18px 22px;
+  backdrop-filter: blur(3px);
+}
+
+.brand-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+  color: var(--azul-oscuro);
+  font-size: 34px;
+}
+
+.brand-box p {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  color: var(--dorado-claro);
+  font-weight: 800;
+}
+
+.brand-box h1 {
+  font-size: 33px;
+  line-height: 1.1;
+}
+
+.brand-box span {
+  color: #dbeafe;
+}
+
+.login-link {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  background: var(--blanco);
+  color: var(--azul);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  padding: 11px 17px;
+  font-weight: 800;
+  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+}
+
+@media (max-width: 720px) {
+  .top-header {
+    padding: 22px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .brand-box {
+    width: 100%;
+  }
+
+  .brand-box h1 {
+    font-size: 25px;
+  }
+}

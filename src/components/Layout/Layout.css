@@ -1,0 +1,43 @@
+.site-shell {
+  min-height: 100vh;
+  padding: 22px;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(217, 164, 65, .26), transparent 24%),
+    radial-gradient(circle at 92% 10%, rgba(30, 127, 168, .22), transparent 24%),
+    linear-gradient(135deg, #071d2d, #f2f7f9 34%, #edf5f7);
+}
+
+.site-card {
+  max-width: 1320px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 55px rgba(7, 29, 45, 0.25);
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.content-box {
+  min-height: 610px;
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .site-shell {
+    padding: 10px;
+  }
+}
